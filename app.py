@@ -7,7 +7,6 @@ import streamlit as st
 import numpy as np
 from datetime import date
 from datetime import datetime
-from trigger import run_pipeline_job
 today = str(date.today())
 
 #######################
@@ -27,14 +26,14 @@ analytics_name = path + 'analytics' + today + '.csv'
 soft_skills_name = path + 'soft_skills' + today + '.csv'
 hard_skills_name = path + 'hard_skills' + today + '.csv'
 
-with open('job_analytics/pie_chart_data.json', "r", encoding="utf-8") as f:
+with open(path + 'pie_chart_data.json', "r", encoding="utf-8") as f:
     pie_chart = json.load(f)
 
-with open('job_analytics/donut_data.json', "r", encoding="utf-8") as f:
+with open(path + 'donut_data.json', "r", encoding="utf-8") as f:
     donut_chart = json.load(f)
 
-df_hard = pd.read_csv(hard_skills_name + today, index_col = False)
-df_soft = pd.read_csv(soft_skills_name + today, index_col = False)
+df_hard = pd.read_csv(hard_skills_name, index_col = False)
+df_soft = pd.read_csv(soft_skills_name, index_col = False)
 df = pd.read_csv(analytics_name, index_col = False)
 length = df.shape[0]
 
@@ -86,7 +85,7 @@ def make_pie(labels, values):
     # Enable dark theme
     plt.style.use("dark_background")
     # Create figure with dark background
-    fig1, ax1 = plt.subplots(figsize=(3, 3), facecolor="#0e1117")
+    fig1, ax1 = plt.subplots(figsize=(2.5, 2.5), facecolor="#0e1117")
     # Define colors for contrast
     colors = ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f", "green"]
     # Create pie chart with dark theme adjustments
