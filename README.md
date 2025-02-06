@@ -1,4 +1,4 @@
-# 📊 Data Science Job Market Insights Dashboard
+# 📊 Data Job Market Insights Dashboard
 <img width="1408" alt="Screenshot 2025-02-06 at 16 47 37" src="https://github.com/user-attachments/assets/8eb9c5e2-1a90-4e5c-9d1b-05c44eb1e159" />
 
 This **Streamlit-based dashboard** provides real-time insights into the most in-demand data science skills by analyzing job postings. 
